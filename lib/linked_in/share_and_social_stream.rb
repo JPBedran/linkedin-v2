@@ -61,11 +61,12 @@ module LinkedIn
     def share(options = {})
       path = '/ugcPosts'
       defaults = {
-        distribution: {
-          linkedInDistributionTarget: {
-            visibleToGuest: true
-          }
-        }
+        lifecycleState: "PUBLISHED"
+        # distribution: {
+        #   linkedInDistributionTarget: {
+        #     visibleToGuest: true
+        #   }
+        # }
       }
       post(path, MultiJson.dump(defaults.merge(options)), 'Content-Type' => 'application/json')
     end
