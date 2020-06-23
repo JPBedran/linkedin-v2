@@ -59,7 +59,7 @@ module LinkedIn
     # @return [LinkedIn::Mash]
     #
     def share(options = {})
-      path = '/shares'
+      path = '/ugcPosts'
       defaults = {
         distribution: {
           linkedInDistributionTarget: {
