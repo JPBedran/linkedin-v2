@@ -59,7 +59,7 @@ module LinkedIn
     # @return [LinkedIn::Mash]
     #
     def share(api_id,content)
-      path = '/share'
+      path = '/ugcPosts'
       defaults = {
           "author": "urn:li:person:#{api_id}",
           "lifecycleState": "PUBLISHED",
