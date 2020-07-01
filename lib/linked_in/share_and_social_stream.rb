@@ -58,17 +58,24 @@ module LinkedIn
     # @option options [String] :owner, the URN of the entity posting the share.
     # @return [LinkedIn::Mash]
     #
-    def share(options = {})
+    def share(api_id,content)
       path = '/share'
       defaults = {
-        # lifecycleState: "PUBLISHED"
-        distribution: {
-          linkedInDistributionTarget: {
-            visibleToGuest: true
+          "author": "urn:li:person:#{api_id}",
+          "lifecycleState": "PUBLISHED",
+          "specificContent": {
+              "com.linkedin.ugc.ShareContent": {
+                  "shareCommentary": {
+                      "text": "#{content}"
+                  },
+                  "shareMediaCategory": "NONE"
+              }
+          },
+          "visibility": {
+              "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
           }
-        }
       }
-      post(path, MultiJson.dump(defaults.merge(options)), 'Content-Type' => 'application/json')
+      post(path, Json.dump(defaults), 'Content-Type' => 'application/json')
     end
 
     # Retrieve a Summary of Social Actions
