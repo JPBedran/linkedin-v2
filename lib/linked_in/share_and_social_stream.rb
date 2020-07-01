@@ -75,7 +75,7 @@ module LinkedIn
               "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
           }
       }
-      post(path, Json.dump(defaults), 'Content-Type' => 'application/json')
+      post(path, MultiJson.dump(defaults), 'Content-Type' => 'application/json')
     end
 
     # Retrieve a Summary of Social Actions
