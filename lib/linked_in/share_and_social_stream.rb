@@ -59,8 +59,9 @@ module LinkedIn
     # @return [LinkedIn::Mash]
     #
     def share(options = {})
-      path = '/ugcPosts'
+      path = '/share'
       defaults = {
+        # lifecycleState: "PUBLISHED"
         distribution: {
           linkedInDistributionTarget: {
             visibleToGuest: true
