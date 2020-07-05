@@ -71,18 +71,18 @@ module LinkedIn
                   "shareMediaCategory": "ARTICLE"
                   "media": [
                       {
-                    "status": "READY",
-                    "description": {
-                        "text": "Official LinkedIn Blog - Your source for insights and information about LinkedIn."
-                    },
+                        "status": "READY",
+                        "description": {
+                            "text": "Official LinkedIn Blog - Your source for insights and information about LinkedIn."
+                        },
                     "originalUrl": "https://witseed.com/",
                     "title": {
                         "text": "Witseed Educacao"
-                        }
+                      }
                     }
-                ]
-              }
-          },
+                  ] 
+                }
+            },
           "visibility": {
               "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
           }
