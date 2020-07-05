@@ -61,31 +61,31 @@ module LinkedIn
     def share(api_id,content)
       path = '/ugcPosts'
       defaults = {
-          "author": "urn:li:person:#{api_id}",
-          "lifecycleState": "PUBLISHED",
-          "specificContent": {
-              "com.linkedin.ugc.ShareContent": {
-                  "shareCommentary": {
-                      "text": "#{content}"
-                  },
-                  "shareMediaCategory": "ARTICLE"
-                  "media": [
-                      {
-                        "status": "READY",
-                        "description": {
-                            "text": "Official LinkedIn Blog - Your source for insights and information about LinkedIn."
-                        },
-                    "originalUrl": "https://witseed.com/",
-                    "title": {
-                        "text": "Witseed Educacao"
-                      }
-                    }
-                  ] 
-                }
+        "author": "urn:li:person:#{api_id}",
+        "lifecycleState": "PUBLISHED",
+        "specificContent": {
+          "com.linkedin.ugc.ShareContent": {
+            "shareCommentary":{
+              "text": "#{content}"
             },
-          "visibility": {
-              "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+            "shareMediaCategory": "ARTICLE"
+            "media":[
+              {
+                "status": "READY",
+                "description":{
+                  "text": "Official LinkedIn Blog - Your source for insights and information about LinkedIn."
+                },
+                "originalUrl": "https://witseed.com/",
+                "title":{
+                  "text": "Witseed Educacao"
+                }
+              }
+            ]
           }
+        },
+        "visibility":{
+          "com.linkedin.ugc.MemberNetworkVisibility": "CONNECTIONS"
+        }
       }
       post(path, MultiJson.dump(defaults), 'Content-Type' => 'application/json')
     end
