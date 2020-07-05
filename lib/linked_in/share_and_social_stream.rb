@@ -68,7 +68,7 @@ module LinkedIn
             "shareCommentary":{
               "text": "#{content}"
             },
-            "shareMediaCategory": "ARTICLE"
+            "shareMediaCategory": "ARTICLE",
             "media":[
               {
                 "status": "READY",
